@@ -6,8 +6,12 @@ class Circle
 private :
     int xpos, ypos, rad;
 public :
-    void Init(int x, int y, int r);
     void ShowPointInfo() const;
+    Circle(int x, int y, int r)
+        : xpos(x), ypos(y), rad(r)
+    {
+    }
+
 };
 
 class Ring
@@ -16,7 +20,9 @@ private :
     Circle Inner;
     Circle Outter;
 public : 
-    void Init(int Ix, int Iy, int Ir, int Ox, int Oy, int Or);
+    Ring(int Ix, int Iy, int Ir, int Ox, int Oy, int Or)
+        : Inner(Ix,Iy,Ir), Outter(Ox,Oy,Or)
+        {}
     void ShowRingInfo() const;
 };
 
